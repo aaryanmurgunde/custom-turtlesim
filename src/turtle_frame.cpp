@@ -90,10 +90,19 @@ TurtleFrame::TurtleFrame(QWidget* parent, Qt::WindowFlags f)
   turtles.append("melodic.png");
   turtles.append("noetic.png");
   
+  /*
+    ADDED CUSTOM IMAGE IN THE FOLDER
+    vector to appened all the custom images 
+  */
   QVector<QString> custom_image;
   custom_image.append("custom.svg");
 
   QString images_path = (ros::package::getPath("turtlesim") + "/images/").c_str();
+
+  /*
+  changed turtles ===> custom_image vector in the loop
+  */
+ 
   for (int i = 0; i < custom_image.size(); ++i)
   {
     QImage img;
